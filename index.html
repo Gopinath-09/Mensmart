@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens-Mart</title>
+
+    <link rel="stylesheet" href="bstcode.css">
+
+    <style>
+        @import url('./css/components/fontaswome/css/font-awesome.css');
+        @import url('./css/components/fontaswome/css/font-awesome.min.css');
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nv-menu">
+                <div class="close-menu-slide">
+                    <p>MENU</p>
+                    <span class="closebtnx close-menu-slide-btn"><span class="left-close-line"></span><span class="right-close-line"></span></span>
+                </div>
+                <div class="menu-pages">Pages</div>
+                <div class="product-categories">categories</div>
+            </div>
+            <div class="menu-slide"><i class="fa fa-bars"></i></div>
+            <div class="nav-logo"><p>Men's Mart</p></div>
+            <div class="shopping-cart">
+                <div class="cart-count">0</div>
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="nv-cart">
+                <div class="close-shooping-cart">
+                    <span class="closebtnx close-shopping-cart-btn"><span class="left-close-line"></span><span class="right-close-line"></span></span>
+                    <p>Your Cart</p>
+                </div>
+                <div class="cart-headings">
+                    <p>Product</p>
+                    <p>Delete</p>
+                    <p>Count</p>
+                    <p>Price</p>
+                </div>
+                <div class="cart-items-content"></div>
+                <div class="cart-items"></div>
+                <div class="total-amt">
+                    <p>Total</p>
+                    <p class="total-cart-price">&#x20b9;0.00</p>
+                </div>
+                <button class="cart-place-order">Place Order</button>
+                <div class="purchaseformdiv">
+                    <div class="formcontents">
+                        <form method="post">
+                                <div>
+                                    <p class="formtitile">Purchase Details</p>
+                                    <span class="closebtnx form-close-btn"><span class="left-close-line"></span><span class="right-close-line"></span></span>
+                                </div>
+                                <label for="">Name:</label>
+                                <input type="text" name="name" id="name" min="1" max="5" required><br><br>
+                                <label for=":">Email</label>
+                                <input type="email" name="" id="email" min="10" required><br><br>
+                                <input type="button" value="Submit" id="orderformsubmit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                const openmenubarbtn = document.querySelector('.menu-slide');
+                const openshoppingcartbtn = document.querySelector('.shopping-cart');
+                const menu = document.querySelector('.nv-menu');
+                const cart = document.querySelector('.nv-cart');
+
+                const closemenubarbtn = document.querySelector('.close-menu-slide-btn');
+                const closeshoppingcartbtn = document.querySelector('.close-shopping-cart-btn');
+
+                openmenubarbtn.addEventListener('click',()=>{
+                    menu.classList.add('nv-menu-active');
+                    cart.classList.remove('nv-cart-active');
+                })
+                openshoppingcartbtn.addEventListener('click',()=>{
+                    cart.classList.add('nv-cart-active');
+                    menu.classList.remove('nv-menu-active');
+                })
+                closemenubarbtn.addEventListener('click',()=>{
+                    menu.classList.remove('nv-menu-active');
+                })
+                closeshoppingcartbtn.addEventListener('click',()=>{
+                    cart.classList.remove('nv-cart-active');
+                })
+            </script>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="product-items">
+            <!--Render Product here-->
+        </div>
+    </div>
+    <footer>
+        <center><p>*This Site is Developing by #Gopi</p></center>
+    </footer>
+    <script src="allproductdetails.js"></script>
+    <script src="renderproducts.js"></script>
+
+    <script src="bstcode.js" async></script>
+</body>
+</html>
